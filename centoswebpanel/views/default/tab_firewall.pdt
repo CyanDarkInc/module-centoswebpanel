@@ -1,0 +1,25 @@
+
+    <div class="title_row first">
+        <h3><?php $this->_('Centoswebpanel.tab_firewall.unblock_ip_title'); ?></h3>
+    </div>
+    <?php
+        $this->Form->create();
+    ?>
+    <div class="pad">
+        <ul>
+            <li>
+                <?php
+                    $this->Form->label($this->_('Centoswebpanel.tab_firewall.field_ip_address', true), 'ip_address');
+                    $this->Form->fieldText('ip_address', $this->Html->ifSet($vars->ip_address, $ip_address), ['id' => 'ip_address']);
+                ?>
+            </li>
+        </ul>
+    </div>
+    <div class="button_row">
+        <?php
+            $this->Form->fieldSubmit('unblock', $this->_('Centoswebpanel.tab_firewall.button_unblock', true), ['class' => 'btn btn-primary pull-right']);
+        ?>
+    </div>
+    <?php
+        $this->Form->end();
+    ?>
