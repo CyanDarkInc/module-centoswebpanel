@@ -1,6 +1,6 @@
 <?php
 /**
- * CentOS WebPanel Module.
+ * CentOS WebPanel Module
  *
  * @package blesta
  * @subpackage blesta.components.modules.centoswebpanel
@@ -20,7 +20,7 @@ class Centoswebpanel extends Module
     private static $authors = [['name'=>'Phillips Data, Inc.', 'url'=>'http://www.blesta.com']];
 
     /**
-     * Initializes the module.
+     * Initializes the module
      */
     public function __construct()
     {
@@ -32,7 +32,7 @@ class Centoswebpanel extends Module
     }
 
     /**
-     * Returns the name of this module.
+     * Returns the name of this module
      *
      * @return string The common name of this module
      */
@@ -42,7 +42,7 @@ class Centoswebpanel extends Module
     }
 
     /**
-     * Returns the version of this module.
+     * Returns the version of this module
      *
      * @return string The current version of this gateway
      */
@@ -52,7 +52,7 @@ class Centoswebpanel extends Module
     }
 
     /**
-     * Returns the name and url of the authors of this module.
+     * Returns the name and url of the authors of this module
      *
      * @return array The name and url of the authors of this module
      */
@@ -63,7 +63,7 @@ class Centoswebpanel extends Module
 
     /**
      * Returns all tabs to display to an admin when managing a service whose
-     * package uses this module.
+     * package uses this module
      *
      * @param stdClass $package A stdClass object representing the selected package
      * @return array An array of tabs in the format of method => title.
@@ -78,7 +78,7 @@ class Centoswebpanel extends Module
 
     /**
      * Returns all tabs to display to a client when managing a service whose
-     * package uses this module.
+     * package uses this module
      *
      * @param stdClass $package A stdClass object representing the selected package
      * @return array An array of tabs in the format of method => title.
@@ -92,7 +92,7 @@ class Centoswebpanel extends Module
     }
 
     /**
-     * Returns a noun used to refer to a module row (e.g. "Server").
+     * Returns a noun used to refer to a module row (e.g. "Server")
      *
      * @return string The noun used to refer to a module row
      */
@@ -102,7 +102,7 @@ class Centoswebpanel extends Module
     }
 
     /**
-     * Returns a noun used to refer to a module row in plural form (e.g. "Servers", "VPSs", "Reseller Accounts", etc.).
+     * Returns a noun used to refer to a module row in plural form (e.g. "Servers", "VPSs", "Reseller Accounts", etc.)
      *
      * @return string The noun used to refer to a module row in plural form
      */
@@ -112,7 +112,7 @@ class Centoswebpanel extends Module
     }
 
     /**
-     * Returns a noun used to refer to a module group (e.g. "Server Group").
+     * Returns a noun used to refer to a module group (e.g. "Server Group")
      *
      * @return string The noun used to refer to a module group
      */
@@ -295,7 +295,6 @@ class Centoswebpanel extends Module
                 ];
             }
         }
-
         return $meta;
     }
 
@@ -331,12 +330,11 @@ class Centoswebpanel extends Module
                 ];
             }
         }
-
         return $meta;
     }
 
     /**
-     * Returns the rendered view of the manage module page.
+     * Returns the rendered view of the manage module page
      *
      * @param mixed $module A stdClass object representing the module and its rows
      * @param array $vars An array of post data submitted to or on the manager module
@@ -359,7 +357,7 @@ class Centoswebpanel extends Module
     }
 
     /**
-     * Returns the rendered view of the add module row page.
+     * Returns the rendered view of the add module row page
      *
      * @param array $vars An array of post data submitted to or on the add module
      *  row page (used to repopulate fields after an error)
@@ -382,13 +380,12 @@ class Centoswebpanel extends Module
             }
         }
 
-        $this->view->set('vars', (object) $vars);
-
+        $this->view->set('vars', (object)$vars);
         return $this->view->fetch();
     }
 
     /**
-     * Returns the rendered view of the edit module row page.
+     * Returns the rendered view of the edit module row page
      *
      * @param stdClass $module_row The stdClass representation of the existing module row
      * @param array $vars An array of post data submitted to or on the edit
@@ -414,15 +411,14 @@ class Centoswebpanel extends Module
             }
         }
 
-        $this->view->set('vars', (object) $vars);
-
+        $this->view->set('vars', (object)$vars);
         return $this->view->fetch();
     }
 
     /**
      * Adds the module row on the remote server. Sets Input errors on failure,
      * preventing the row from being added. Returns a set of data, which may be
-     * a subset of $vars, that is stored for this module row.
+     * a subset of $vars, that is stored for this module row
      *
      * @param array $vars An array of module info to add
      * @return array A numerically indexed array of meta fields for the module row containing:
@@ -464,7 +460,7 @@ class Centoswebpanel extends Module
     /**
      * Edits the module row on the remote server. Sets Input errors on failure,
      * preventing the row from being updated. Returns a set of data, which may be
-     * a subset of $vars, that is stored for this module row.
+     * a subset of $vars, that is stored for this module row
      *
      * @param stdClass $module_row The stdClass representation of the existing module row
      * @param array $vars An array of module info to update
@@ -516,7 +512,7 @@ class Centoswebpanel extends Module
     }
 
     /**
-     * Returns the value used to identify a particular service.
+     * Returns the value used to identify a particular service
      *
      * @param stdClass $service A stdClass object representing the service
      * @return string A value used to identify this service amongst other similar services
@@ -528,14 +524,13 @@ class Centoswebpanel extends Module
                 return $field->value;
             }
         }
-
         return null;
     }
 
     /**
      * Returns the value used to identify a particular package service which has
      * not yet been made into a service. This may be used to uniquely identify
-     * an uncreated services of the same package (i.e. in an order form checkout).
+     * an uncreated services of the same package (i.e. in an order form checkout)
      *
      * @param stdClass $package A stdClass object representing the selected package
      * @param array $vars An array of user supplied info to satisfy the request
@@ -547,12 +542,11 @@ class Centoswebpanel extends Module
         if (isset($vars['centoswebpanel_domain'])) {
             return $vars['centoswebpanel_domain'];
         }
-
         return null;
     }
 
     /**
-     * Returns all fields to display to an admin attempting to add a service with the module.
+     * Returns all fields to display to an admin attempting to add a service with the module
      *
      * @param stdClass $package A stdClass object representing the selected package
      * @param $vars stdClass A stdClass object representing a set of post fields
@@ -605,7 +599,7 @@ class Centoswebpanel extends Module
     }
 
     /**
-     * Returns all fields to display to a client attempting to add a service with the module.
+     * Returns all fields to display to a client attempting to add a service with the module
      *
      * @param stdClass $package A stdClass object representing the selected package
      * @param $vars stdClass A stdClass object representing a set of post fields
@@ -635,7 +629,7 @@ class Centoswebpanel extends Module
     }
 
     /**
-     * Returns all fields to display to an admin attempting to edit a service with the module.
+     * Returns all fields to display to an admin attempting to edit a service with the module
      *
      * @param stdClass $package A stdClass object representing the selected package
      * @param $vars stdClass A stdClass object representing a set of post fields
@@ -739,7 +733,6 @@ class Centoswebpanel extends Module
         }
 
         $this->Input->setRules($rules);
-
         return $this->Input->validates($vars);
     }
 
@@ -766,15 +759,13 @@ class Centoswebpanel extends Module
      * @see Module::getModule()
      * @see Module::getModuleRow()
      */
-    public function addService($package, array $vars = null, $parent_package = null, $parent_service = null, $status = 'pending')
-    {
+    public function addService($package, array $vars = null, $parent_package = null, $parent_service = null, $status = 'pending') {
         $row = $this->getModuleRow();
 
         if (!$row) {
             $this->Input->setErrors(
                 ['module_row' => ['missing' => Language::_('Centoswebpanel.!error.module_row.missing', true)]]
             );
-
             return;
         }
 
@@ -800,7 +791,7 @@ class Centoswebpanel extends Module
             }
         }
 
-        $params = $this->getFieldsFromInput((array) $vars, $package);
+        $params = $this->getFieldsFromInput((array)$vars, $package);
 
         $this->validateService($package, $vars);
 
@@ -1000,7 +991,7 @@ class Centoswebpanel extends Module
             // Delete CentOS WebPanel account
             $this->log($row->meta->host_name . '|account_remove', serialize($service_fields->centoswebpanel_username), 'input', true);
             $this->parseResponse($api->removeAccount($service_fields->centoswebpanel_username));
-
+            
             // Update the number of accounts on the server
             $this->updateAccountCount($row, false);
         }
@@ -1123,7 +1114,6 @@ class Centoswebpanel extends Module
         $this->view->set('vars', (object) $this->Html->ifSet($post));
 
         $this->view->setDefaultView('components' . DS . 'modules' . DS . 'centoswebpanel' . DS);
-
         return $this->view->fetch();
     }
 
@@ -1162,12 +1152,11 @@ class Centoswebpanel extends Module
         $this->view->set('vars', (object) $this->Html->ifSet($post));
 
         $this->view->setDefaultView('components' . DS . 'modules' . DS . 'centoswebpanel' . DS);
-
         return $this->view->fetch();
     }
 
     /**
-     * Validates that the given hostname is valid.
+     * Validates that the given hostname is valid
      *
      * @param string $host_name The host name to validate
      * @return bool True if the hostname is valid, false otherwise
@@ -1185,7 +1174,7 @@ class Centoswebpanel extends Module
     }
 
     /**
-     * Validates that at least 2 name servers are set in the given array of name servers.
+     * Validates that at least 2 name servers are set in the given array of name servers
      *
      * @param array $name_servers An array of name servers
      * @return bool True if the array count is >= 2, false otherwise
@@ -1195,12 +1184,11 @@ class Centoswebpanel extends Module
         if (is_array($name_servers) && count($name_servers) >= 2) {
             return true;
         }
-
         return false;
     }
 
     /**
-     * Validates that the nameservers given are formatted correctly.
+     * Validates that the nameservers given are formatted correctly
      *
      * @param array $name_servers An array of name servers
      * @return bool True if every name server is formatted correctly, false otherwise
@@ -1214,12 +1202,11 @@ class Centoswebpanel extends Module
                 }
             }
         }
-
         return true;
     }
 
     /**
-     * Retrieves the accounts on the server.
+     * Retrieves the accounts on the server
      *
      * @param stdClass $api The CentOS WebPanel API
      * @return mixed The number of CentOS WebPanel accounts on the server, or false on error
@@ -1238,10 +1225,9 @@ class Centoswebpanel extends Module
     }
 
     /**
-     * Updates the module row meta number of accounts.
+     * Updates the module row meta number of accounts
      *
      * @param stdClass $module_row A stdClass object representing a single server
-     * @param mixed $increase
      */
     private function updateAccountCount($module_row, $increase = true)
     {
@@ -1262,17 +1248,14 @@ class Centoswebpanel extends Module
         }
 
         // Update the module row account list
-        $vars = (array) $vars;
+        $vars = (array)$vars;
         $this->ModuleManager->editRow($module_row->id, $vars);
     }
 
     /**
      * Validates whether or not the connection details are valid by attempting to fetch
-     * the number of accounts that currently reside on the server.
+     * the number of accounts that currently reside on the server
      *
-     * @param mixed $api_key
-     * @param mixed $hostname
-     * @param mixed $use_ssl
      * @return bool True if the connection is valid, false otherwise
      */
     public function validateConnection($api_key, $hostname, $use_ssl)
@@ -1292,7 +1275,7 @@ class Centoswebpanel extends Module
     }
 
     /**
-     * Generates a username from the given host name.
+     * Generates a username from the given host name
      *
      * @param string $host_name The host name to use to generate the username
      * @return string The username generated from the given hostname
@@ -1308,8 +1291,8 @@ class Centoswebpanel extends Module
         $pool_size = strlen($pool);
 
         if ($length < 5) {
-            for ($i=$length; $i < 8; $i++) {
-                $username .= substr($pool, mt_rand(0, $pool_size - 1), 1);
+            for ($i=$length; $i<8; $i++) {
+                $username .= substr($pool, mt_rand(0, $pool_size-1), 1);
             }
             $length = strlen($username);
         }
@@ -1318,14 +1301,14 @@ class Centoswebpanel extends Module
 
         // Check for an existing user account
         $row = $this->getModuleRow();
-
+        
         if ($row) {
             $api = $this->getApi($row->meta->host_name, $row->meta->api_key, $row->meta->use_ssl);
         }
 
         // Username exists, create another instead
         if (!$api->accountExists($username)) {
-            for ($i=0; $i < (int) str_repeat(9, $account_matching_characters); $i++) {
+            for ($i=0; $i<(int)str_repeat(9, $account_matching_characters); $i++) {
                 $new_username = substr($username, 0, -$account_matching_characters) . $i;
                 if (!array_key_exists($new_username, $accounts)) {
                     $username = $new_username;
@@ -1333,12 +1316,12 @@ class Centoswebpanel extends Module
                 }
             }
         }
-
+        
         return $username;
     }
 
     /**
-     * Generates a password.
+     * Generates a password
      *
      * @param int $min_length The minimum character length for the password (5 or larger)
      * @param int $max_length The maximum character length for the password (14 or fewer)
@@ -1351,15 +1334,15 @@ class Centoswebpanel extends Module
         $length = mt_rand(max($min_length, 5), min($max_length, 14));
         $password = '';
 
-        for ($i=0; $i < $length; $i++) {
-            $password .= substr($pool, mt_rand(0, $pool_size - 1), 1);
+        for ($i=0; $i<$length; $i++) {
+            $password .= substr($pool, mt_rand(0, $pool_size-1), 1);
         }
 
         return $password;
     }
 
     /**
-     * Returns an array of service field to set for the service using the given input.
+     * Returns an array of service field to set for the service using the given input
      *
      * @param array $vars An array of key/value input pairs
      * @param stdClass $package A stdClass object representing the package for the service
@@ -1369,7 +1352,7 @@ class Centoswebpanel extends Module
     {
         $fields = [
             'domain' => isset($vars['centoswebpanel_domain']) ? $vars['centoswebpanel_domain'] : null,
-            'username' => isset($vars['centoswebpanel_username']) ? $vars['centoswebpanel_username'] : null,
+            'username' => isset($vars['centoswebpanel_username']) ? $vars['centoswebpanel_username']: null,
             'password' => isset($vars['centoswebpanel_password']) ? $vars['centoswebpanel_password'] : null,
             'email' => isset($vars['centoswebpanel_email']) ? $vars['centoswebpanel_email'] : null,
             'package' => $package->meta->package,
@@ -1382,7 +1365,7 @@ class Centoswebpanel extends Module
     }
 
     /**
-     * Parses the response from the API into a stdClass object.
+     * Parses the response from the API into a stdClass object
      *
      * @param string $response The response from the API
      * @return stdClass A stdClass object representing the response, void if the response was an error
@@ -1417,11 +1400,10 @@ class Centoswebpanel extends Module
     }
 
     /**
-     * Initializes the CentoswebpanelApi and returns an instance of that object.
+     * Initializes the CentoswebpanelApi and returns an instance of that object
      *
      * @param string $hostname The host to the CentOS WebPanel server
      * @param string $api_key The remote api key
-     * @param mixed $use_ssl
      * @return CentoswebpanelApi The CentoswebpanelApi instance
      */
     private function getApi($hostname, $api_key, $use_ssl = true)
@@ -1434,7 +1416,7 @@ class Centoswebpanel extends Module
     }
 
     /**
-     * Builds and returns the rules required to add/edit a module row (e.g. server).
+     * Builds and returns the rules required to add/edit a module row (e.g. server)
      *
      * @param array $vars An array of key/value data pairs
      * @return array An array of Input rules suitable for Input::setRules()
@@ -1493,7 +1475,7 @@ class Centoswebpanel extends Module
     }
 
     /**
-     * Builds and returns rules required to be validated when adding/editing a package.
+     * Builds and returns rules required to be validated when adding/editing a package
      *
      * @param array $vars An array of key/value data pairs
      * @return array An array of Input rules suitable for Input::setRules()

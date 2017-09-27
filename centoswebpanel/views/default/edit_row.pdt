@@ -9,7 +9,7 @@
             $this->Form->fieldHidden('account_count', $this->Html->ifSet($vars->account_count, 0));
             ?>
             <div class="title_row first">
-                <h3><?php $this->_('Centoswebpanel.edit_row.basic_title'); ?></h3>
+                <h3><?php $this->_('Centoswebpanel.edit_row.basic_title');?></h3>
             </div>
             <div class="pad">
                 <ul>
@@ -47,17 +47,17 @@
             </div>
 
             <div class="title_row">
-                <h3><?php $this->_('Centoswebpanel.edit_row.name_servers_title'); ?></h3>
+                <h3><?php $this->_('Centoswebpanel.edit_row.name_servers_title');?></h3>
             </div>
             <div class="pad">
                 <div class="links_row">
-                    <a class="btn btn-default pull-right btn-sm ns_row_add" href="#"><i class="fa fa-plus"></i> <span><?php $this->_('Centoswebpanel.edit_row.name_server_btn'); ?></span></a>
+                    <a class="btn btn-default pull-right btn-sm ns_row_add" href="#"><i class="fa fa-plus"></i> <span><?php $this->_('Centoswebpanel.edit_row.name_server_btn');?></span></a>
                 </div>
                 <table class="table">
                     <thead>
                         <tr class="heading_row">
-                            <td><?php $this->Form->label($this->_('Centoswebpanel.edit_row.name_server_col', true)); ?></td>
-                            <td><?php $this->Form->label($this->_('Centoswebpanel.edit_row.name_server_host_col', true)); ?></td>
+                            <td><?php $this->Form->label($this->_('Centoswebpanel.edit_row.name_server_col', true));?></td>
+                            <td><?php $this->Form->label($this->_('Centoswebpanel.edit_row.name_server_host_col', true));?></td>
                             <td class="last"></td>
                         </tr>
                     </thead>
@@ -65,11 +65,11 @@
                         <?php
                         $num_servers = count($this->Html->ifSet($vars->name_servers));
                         for ($i = 0; $i < max(2, $num_servers); $i++) {
-                            ?>
-                        <tr class="ns_row<?php echo ($i % 2 == 1) ? ' odd_row' : ''; ?>">
-                            <td><?php $this->_('Centoswebpanel.edit_row.name_server', false, '<span>' . ($i + 1) . '</span>'); ?></td>
-                            <td><?php $this->Form->fieldText('name_servers[]', $this->Html->ifSet($vars->name_servers[$i])); ?></td>
-                            <td><a href="#" class="manage ns_row_remove"><?php $this->_('Centoswebpanel.edit_row.remove_name_server'); ?></a></td>
+                        ?>
+                        <tr class="ns_row<?php echo ($i%2 == 1) ? ' odd_row' : '';?>">
+                            <td><?php $this->_('Centoswebpanel.edit_row.name_server', false, '<span>' . ($i+1) . '</span>');?></td>
+                            <td><?php $this->Form->fieldText('name_servers[]', $this->Html->ifSet($vars->name_servers[$i]));?></td>
+                            <td><a href="#" class="manage ns_row_remove"><?php $this->_('Centoswebpanel.edit_row.remove_name_server');?></a></td>
                         </tr>
                         <?php
                         }
@@ -79,7 +79,7 @@
             </div>
 
             <div class="title_row">
-                <h3><?php $this->_('Centoswebpanel.edit_row.notes_title'); ?></h3>
+                <h3><?php $this->_('Centoswebpanel.edit_row.notes_title');?></h3>
             </div>
             <div class="pad">
                 <ul>

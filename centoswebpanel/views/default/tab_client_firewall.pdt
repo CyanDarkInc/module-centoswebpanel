@@ -1,6 +1,6 @@
 
     <div id="unblock_ip">
-        <h4><?php $this->_('Centoswebpanel.tab_client_firewall.unblock_ip_title'); ?></h4>
+        <h4><?php $this->_('Centoswebpanel.tab_client_firewall.unblock_ip_title');?></h4>
 
         <?php
             $this->Form->create();
@@ -14,7 +14,7 @@
             </div>
         </div>
         <button class="btn btn-default pull-right">
-            <i class="fa fa-lock"></i> <?php $this->_('Centoswebpanel.tab_client_firewall.button_unblock'); ?>
+            <i class="fa fa-lock"></i> <?php $this->_('Centoswebpanel.tab_client_firewall.button_unblock');?>
         </button>
         <?php
             $this->Form->end();
