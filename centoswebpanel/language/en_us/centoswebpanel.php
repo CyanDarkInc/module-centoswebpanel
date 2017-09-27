@@ -1,6 +1,6 @@
 <?php
 /**
- * en_us language for the centoswebpanel module
+ * en_us language for the centoswebpanel module.
  */
 // Basics
 $lang['Centoswebpanel.name'] = 'CentOS WebPanel';
@@ -31,7 +31,6 @@ $lang['Centoswebpanel.manage.module_rows.confirm_delete'] = 'Are you sure you wa
 $lang['Centoswebpanel.manage.module_groups.confirm_delete'] = 'Are you sure you want to delete this server group?';
 $lang['Centoswebpanel.manage.module_rows_no_results'] = 'There are no servers.';
 $lang['Centoswebpanel.manage.module_groups_no_results'] = 'There are no server groups.';
-
 
 $lang['Centoswebpanel.order_options.first'] = 'First Non-full Server';
 $lang['Centoswebpanel.order_options.roundrobin'] = 'Evenly Distribute Among Servers';
@@ -76,18 +75,15 @@ $lang['Centoswebpanel.service_field.domain'] = 'Domain';
 $lang['Centoswebpanel.service_field.username'] = 'Username';
 $lang['Centoswebpanel.service_field.password'] = 'Password';
 
-
 // Service management
 $lang['Centoswebpanel.tab_firewall.unblock_ip_title'] = 'Unblock IP';
 $lang['Centoswebpanel.tab_firewall.field_ip_address'] = 'IP Address';
 $lang['Centoswebpanel.tab_firewall.button_unblock'] = 'Unblock';
 
-
 // Client actions
 $lang['Centoswebpanel.tab_client_firewall.unblock_ip_title'] = 'Unblock IP';
 $lang['Centoswebpanel.tab_client_firewall.field_ip_address'] = 'IP Address';
 $lang['Centoswebpanel.tab_client_firewall.button_unblock'] = 'Unblock';
-
 
 // Service info
 $lang['Centoswebpanel.service_info.username'] = 'Username';
@@ -96,11 +92,9 @@ $lang['Centoswebpanel.service_info.server'] = 'Server';
 $lang['Centoswebpanel.service_info.options'] = 'Options';
 $lang['Centoswebpanel.service_info.option_login'] = 'Log in';
 
-
 // Tooltips
 $lang['Centoswebpanel.service_field.tooltip.username'] = 'You may leave the username blank to automatically generate one.';
 $lang['Centoswebpanel.service_field.tooltip.password'] = 'You may leave the password blank to automatically generate one.';
-
 
 // Errors
 $lang['Centoswebpanel.!error.server_name_valid'] = 'You must enter a Server Label.';

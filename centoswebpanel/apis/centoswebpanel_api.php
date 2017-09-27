@@ -27,7 +27,7 @@ class CentoswebpanelApi
 
     /**
      * Initializes the class.
-     * 
+     *
      * @param mixed $hostname The CentOS WebPanel hostname or IP Address
      * @param mixed $key The api key
      * @param mixed $use_ssl True to connect to the api using SSL
@@ -71,7 +71,7 @@ class CentoswebpanelApi
 
     /**
      * Parse the returned response.
-     * 
+     *
      * @param string $response The api response
      * @return array An array with the parsed response
      */
@@ -86,7 +86,7 @@ class CentoswebpanelApi
             'Account Removal Script Completed!'
         ];
 
-        $response = trim($response);        
+        $response = trim($response);
         $success = false;
 
         foreach ($possible_results as $result) {
@@ -104,7 +104,7 @@ class CentoswebpanelApi
 
     /**
      * Creates a new account in the server.
-     * 
+     *
      * @param array $params An array contaning the following arguments:
      *  - domain: The account domain name
      *  - username: The account username
@@ -123,7 +123,7 @@ class CentoswebpanelApi
 
     /**
      * Removes an existing account from the server.
-     * 
+     *
      * @param string $username Specifies the username of the account
      * @return array An array containing the request response
      */
@@ -134,7 +134,7 @@ class CentoswebpanelApi
 
     /**
      * Suspend an existing account from the server.
-     * 
+     *
      * @param string $username Specifies the username of the account
      * @return array An array containing the request response
      */
@@ -145,7 +145,7 @@ class CentoswebpanelApi
 
     /**
      * Unsuspends an existing account from the server.
-     * 
+     *
      * @param string $username Specifies the username of the account
      * @return array An array containing the request response
      */
@@ -156,7 +156,7 @@ class CentoswebpanelApi
 
     /**
      * Unblock IP address in CSF firewall.
-     * 
+     *
      * @param string $ip_address The IP address to unblock
      * @return array An array containing the request response
      */
@@ -167,7 +167,7 @@ class CentoswebpanelApi
 
     /**
      * Check if an account exists.
-     * 
+     *
      * @param string $username The username of the account
      * @return bool True if the account exists, false otherwise
      */
@@ -191,7 +191,7 @@ class CentoswebpanelApi
             // We just want to check if the account exists, therefore we
             // will delete the previously created account.
             $this->removeAccount($username);
-            
+
             return false;
         }
 
@@ -200,7 +200,7 @@ class CentoswebpanelApi
 
     /**
      * Get the client IP address.
-     * 
+     *
      * @return string The client IP address
      */
     public function getClientIp()
@@ -209,13 +209,13 @@ class CentoswebpanelApi
 
         if (getenv('HTTP_CLIENT_IP')) {
             $ip_address = getenv('HTTP_CLIENT_IP');
-        } elseif(getenv('HTTP_X_FORWARDED_FOR')) {
+        } elseif (getenv('HTTP_X_FORWARDED_FOR')) {
             $ip_address = getenv('HTTP_X_FORWARDED_FOR');
-        } elseif(getenv('HTTP_X_FORWARDED')) {
+        } elseif (getenv('HTTP_X_FORWARDED')) {
             $ip_address = getenv('HTTP_X_FORWARDED');
-        } elseif(getenv('HTTP_FORWARDED_FOR')) {
+        } elseif (getenv('HTTP_FORWARDED_FOR')) {
             $ip_address = getenv('HTTP_FORWARDED_FOR');
-        } elseif(getenv('HTTP_FORWARDED')) {
+        } elseif (getenv('HTTP_FORWARDED')) {
             $ip_address = getenv('HTTP_FORWARDED');
         } else {
             $ip_address = getenv('REMOTE_ADDR');

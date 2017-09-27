@@ -3,18 +3,18 @@
             <thead>
                 <tr>
                     <th><i class="fa fa-share fa-flip-vertical"></i></th>
-                    <th><?php $this->_('Centoswebpanel.service_info.username');?></th>
-                    <th><?php $this->_('Centoswebpanel.service_info.password');?></th>
-                    <th><?php $this->_('Centoswebpanel.service_info.server');?></th>
-                    <th><?php $this->_('Centoswebpanel.service_info.options');?></th>
+                    <th><?php $this->_('Centoswebpanel.service_info.username'); ?></th>
+                    <th><?php $this->_('Centoswebpanel.service_info.password'); ?></th>
+                    <th><?php $this->_('Centoswebpanel.service_info.server'); ?></th>
+                    <th><?php $this->_('Centoswebpanel.service_info.options'); ?></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td></td>
-                    <td><?php $this->Html->_($service_fields->centoswebpanel_username);?></td>
-                    <td><?php $this->Html->_($service_fields->centoswebpanel_password);?></td>
-                    <td><?php $this->Html->_($module_row->meta->host_name);?></td>
+                    <td><?php $this->Html->_($service_fields->centoswebpanel_username); ?></td>
+                    <td><?php $this->Html->_($service_fields->centoswebpanel_password); ?></td>
+                    <td><?php $this->Html->_($module_row->meta->host_name); ?></td>
                     <td>
                         <?php
                             $this->Form->create($this->Html->safe('https://' . $this->Html->ifSet($module_row->meta->host_name) . ':2031/login/index.php'), ['target' => '_blank']);
@@ -22,7 +22,7 @@
                             $this->Form->fieldHidden('password', $this->Html->ifSet($service_fields->centoswebpanel_password));
                             $this->Form->fieldHidden('commit', 'Login');
                         ?>
-                        <a id="centoswebpanel_login<?php $this->Html->_($service->id);?>" href="#"><?php $this->_('Centoswebpanel.service_info.option_login');?></a>
+                        <a id="centoswebpanel_login<?php $this->Html->_($service->id); ?>" href="#"><?php $this->_('Centoswebpanel.service_info.option_login'); ?></a>
                         <?php
                             $this->Form->end();
                         ?>
@@ -33,7 +33,7 @@
     </div>
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#centoswebpanel_login<?php $this->Html->_($service->id);?>').click(function(e) {
+            $('#centoswebpanel_login<?php $this->Html->_($service->id); ?>').click(function(e) {
                 e.preventDefault();
 
                 $(this).closest('form').submit();
